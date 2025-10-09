@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html, body {
+  width: 100%;
+}
+
+h1 {
+  color: black;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+h2 {
+  color: black;
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+p {
+  color: black;
+  font-size: 18px;
+  text-align: left;
+  margin: 20px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.textomodelos {
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000;
+  text-align: center;
+}
+
+header {
+  background-color: bisque;
+  padding: 16px 32px;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: #ff7b54;
+  font-weight: 700;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  padding: 0;
+}
+
+header a {
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: #ff7b54;
+}
+
+main {
+  padding: 48px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+main section {
+  text-align: center;
+}
+
+main h1, main h2 {
+  margin-bottom: 16px;
+  color: #ff7b54;
+}
+
+.modelos, .local {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 10px;
+  margin: 16px auto;
+  display: block;
+}
+
+.productosgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+  align-items: start;
+  padding: 40px 20px;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.productosgrid h2 {
+  grid-column: 1 / -1;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.productosgrid div {
+  width: 350px;
+}
+
+.productosgrid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.productosgrid p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+footer {
+  background-color: bisque;
+  color: #111;
+  padding: 60px 40px 20px;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.footer1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.footerseccion {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footerseccion h3 {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+.footerseccion ul {
+  list-style: none;
+}
+
+.footerseccion ul li {
+  margin-bottom: 8px;
+}
+
+.footerseccion a {
+  text-decoration: none;
+  color: #444;
+}
+
+.footer2 {
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+.footerabajo {
+  text-align: center;
+}
+
+.footerredes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.footerredes img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.footerabajo p {
+  color: #777;
+  font-size: 13px;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  body {
+    background-color: #ffd966;
+    color: #333;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px 16px;
+  }
+
+  .productosgrid {
+    width: 700px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 30px;
+  }
+
+  .footer1 {
+    width: 700px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    background-color: #6fa8dc;
+    color: #ffffff;
+  }
+
+  header {
+    padding: 16px;
+  }
+
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  header ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  main {
+    padding: 24px 12px;
+    grid-template-columns: 1fr;
+  }
+
+  main h1, main h2 {
+    font-size: 20px;
+  }
+
+  .textomodelos {
+    font-size: 15px;
+    padding: 0 8px;
+  }
+
+  .productosgrid {
+    width: 350px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  footer {
+    padding: 32px 16px;
+  }
+
+  .footer1 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    width: 350px;
+  }
+
+  .footerseccion h3 {
+    margin-bottom: 8px;
+  }
+
+  .footerredes {
+    gap: 16px;
+  }
+
+  .footerabajo p {
+    font-size: 12px;
+  }
+}
