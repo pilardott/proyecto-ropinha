@@ -1,0 +1,345 @@
+
+// VARIABLES
+
+$color-fondo: #ffffff;
+$color-texto: #000;
+$color-header-footer: bisque;
+$color-principal: #ff7b54;
+$color-hover: #ff7b54;
+$color-footer-text: #111;
+$color-footer-link: #444;
+
+$breakpoint-md: 1024px;
+$breakpoint-sm: 767px;
+
+
+// MIXINS
+
+@mixin respond($min, $max) {
+  @media (max-width: $max) and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin transition($property, $duration: 0.3s, $ease: ease-in-out) {
+  transition: $property $duration $ease;
+}
+
+
+// PLACEHOLDER RESET
+
+%reset {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+// BASE
+
+* {
+  @extend %reset;
+}
+
+html, body {
+  width: 100%;
+}
+
+body {
+  background-color: $color-fondo;
+  color: $color-texto;
+  text-align: center;
+  animation: fadeInBody 1s ease-in;
+}
+
+
+// HEADER
+
+header {
+  background-color: $color-header-footer;
+  padding: 16px 32px;
+  animation: slideDown 0.9s ease-out;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    h1 {
+      font-size: 28px;
+      letter-spacing: 2px;
+      color: $color-principal;
+      font-weight: 700;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      padding: 0;
+
+      li {
+        a {
+          color: #333;
+          font-weight: 500;
+          text-decoration: none;
+          @include transition(color);
+
+          &:hover {
+            color: $color-hover;
+            animation: pulseHover 0.6s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// MAIN
+
+main {
+  padding: 48px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+
+  section {
+    text-align: center;
+    animation: fadeInUp 1s ease both;
+
+    h1, h2 {
+      margin-bottom: 16px;
+      color: $color-principal;
+    }
+  }
+
+  .modelos, .local {
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 10px;
+    margin: 16px auto;
+    display: block;
+    @include transition(transform, 0.4s);
+    &:hover { transform: scale(1.03); }
+  }
+}
+
+
+// PRODUCTOS GRID
+
+.productosgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+  align-items: start;
+  padding: 40px 20px;
+  margin: 0 auto;
+  width: 1200px;
+
+  h2 {
+    grid-column: 1 / -1;
+    margin-top: 40px;
+    text-align: center;
+    animation: fadeInUp 1s ease both;
+  }
+
+  div {
+    width: 350px;
+    animation: fadeInUp 1.2s ease both;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+      @include transition(transform, 0.3s);
+      &:hover {
+        transform: scale(1.05);
+        animation: zoomHover 0.5s ease;
+      }
+    }
+
+    p {
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+}
+
+
+// FOOTER
+
+footer {
+  background-color: $color-header-footer;
+  color: $color-footer-text;
+  padding: 60px 40px 20px;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+  animation: fadeIn 1.2s ease-in;
+
+  .footer1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 1200px;
+    margin: 0 auto 40px;
+
+    .footerseccion {
+      flex: 1 1 200px;
+      min-width: 200px;
+
+      h3 {
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: #000;
+        margin-bottom: 12px;
+      }
+
+      ul {
+        list-style: none;
+
+        li {
+          margin-bottom: 8px;
+
+          a {
+            text-decoration: none;
+            color: $color-footer-link;
+            @include transition(color);
+
+            &:hover {
+              color: $color-principal;
+              animation: pulseHover 0.6s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footerredes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 16px;
+
+    img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      @include transition(transform, 0.3s);
+      &:hover {
+        transform: scale(1.1);
+        animation: pulseHover 0.5s ease-in-out;
+      }
+    }
+  }
+
+  .footerabajo p {
+    color: #777;
+    font-size: 13px;
+  }
+}
+
+
+// ANIMACIONES KEYFRAMES
+
+@keyframes fadeInBody {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideDown {
+  0% { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% { transform: translateY(15px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes zoomHover {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1.05); }
+}
+
+@keyframes pulseHover {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+
+// RESPONSIVE DESIGN
+
+@include respond(768px, 1024px) {
+  main {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px 16px;
+  }
+
+  .productosgrid {
+    width: 700px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 30px;
+  }
+
+  .footer1 {
+    width: 700px;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    padding: 16px;
+    nav {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      h1 { font-size: 22px; }
+      ul { flex-direction: column; gap: 8px; }
+    }
+  }
+
+  main {
+    padding: 24px 12px;
+    grid-template-columns: 1fr;
+    h1, h2 { font-size: 20px; }
+    .textomodelos { font-size: 15px; padding: 0 8px; }
+  }
+
+  .productosgrid {
+    width: 350px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  footer {
+    padding: 32px 16px;
+    .footer1 {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 24px;
+      width: 350px;
+      .footerseccion h3 { margin-bottom: 8px; }
+    }
+    .footerredes { gap: 16px; }
+    .footerabajo p { font-size: 12px; }
+  }
+}
